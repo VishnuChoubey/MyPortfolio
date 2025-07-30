@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-darkBrown;
+}
+
+/* Create a reusable clip-path for hexagon */
+.clip-hexagon {
+  clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+}
+
+.hexagon {
+  @apply w-60 aspect-square bg-cyan relative clip-hexagon;
+}
+
+.inner {
+  @apply absolute inset-1 bg-white clip-hexagon;
+}
+
+.hexagon-img {
+  @apply w-full h-full object-cover clip-hexagon;
+}
+
+/* Use a modern monospaced font for code/dev look */
+body, .font-mono {
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', monospace;
+}
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #67e8f9);
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Menlo', 'Consolas', monospace;
+}
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #67e8f9);
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* @layer utilities {
+  .terminal-cursor::after {
+    content: "▋";
+    animation: blink 1s infinite;
+    @apply text-cyan-400 ml-1;
+  }
+} */
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* 
+.terminal-cursor::after {
+  content: "▋";
+  animation: blink 1s infinite;
+  color: #4fd1c5;
+  margin-left: 2px;
+} */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #4fd1c5;
+  border-radius: 4px;
+}
